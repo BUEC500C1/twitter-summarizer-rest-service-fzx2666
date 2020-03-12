@@ -4,13 +4,14 @@ import os
 import multi_task
 
 app = Flask(__name__)
-@app.route('/get_daily')
+@app.route('/')
+
+def home_page():
+	multi_task.ThreadHw4()
+	return render_template("dai_twee.html")
 
 def upload():
-	multi_task.ThreadHw4()
 	return send_file('daily.zip', mimetype='zip',attachment_filename='daily.zip',as_attachment=True)
-	#return "hello world!"
-#api.add_resource(multi_task,'/daily')
 
 if __name__ == '__main__':
 	app.run(host = '127.0.0.1', port = 80, debug=True)
