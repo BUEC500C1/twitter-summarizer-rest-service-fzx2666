@@ -1,5 +1,5 @@
 tweepy
 opencv-python
 pillow
-queue
 flask
+flask_restful
